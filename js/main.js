@@ -5,6 +5,15 @@
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* Always open at the top — don't let the browser restore a previous
+     scroll position (e.g. the footer) on reload, back/forward or tab reopen.
+     Genuine deep-links to a #section are still honoured. */
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (!location.hash) {
+    window.scrollTo(0, 0);
+    window.addEventListener("load", function () { if (!location.hash) window.scrollTo(0, 0); });
+  }
+
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 

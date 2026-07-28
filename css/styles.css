@@ -396,6 +396,28 @@ h1, h2, h3, h4 { font-family: var(--disp); color: var(--ink); line-height: 1.12;
 }
 
 /* =====================================================================
+   Market Entry page
+   ===================================================================== */
+.subpage-top { padding-top: clamp(7rem, 12vh, 9rem); }
+.me-hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.me-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--acc-2); background: var(--acc-tint); padding: 0.5rem 1rem; border-radius: 100px; }
+.me-card { background: var(--dark); color: #fff; border-radius: var(--r-lg); padding: clamp(1.6rem, 3vw, 2.2rem); box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+.me-card::before { content: ""; position: absolute; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(15,138,114,0.55), transparent 70%); top: -120px; right: -90px; filter: blur(20px); }
+.me-card h3 { color: #fff; position: relative; }
+.me-card ul { list-style: none; position: relative; margin-top: 1rem; }
+.me-card li { position: relative; padding-left: 1.6rem; margin-bottom: 0.7rem; color: rgba(255,255,255,0.82); font-size: 0.95rem; }
+.me-card li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 9px; height: 9px; border-radius: 50%; background: #47d6b3; }
+.me-card .big { font-family: var(--disp); font-weight: 800; font-size: clamp(2rem,4vw,2.6rem); color: #fff; }
+.me-card .big small { display: block; font-family: var(--sans); font-weight: 400; font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0.3rem; }
+
+.price { font-family: var(--disp); font-weight: 800; color: var(--acc-2); font-size: 1.02rem; white-space: nowrap; }
+.price small { display: block; font-family: var(--sans); font-weight: 400; color: var(--muted); font-size: 0.78rem; line-height: 1.4; margin-top: 0.25rem; white-space: normal; }
+.gtable td .comp { font-family: var(--disp); font-weight: 700; color: var(--ink); display: block; }
+.disclaimer { font-size: 0.82rem; color: var(--muted); margin-top: 1.2rem; max-width: 70ch; }
+
+@media (max-width: 860px) { .me-hero { grid-template-columns: 1fr; } }
+
+/* =====================================================================
    Reveal animations
    ===================================================================== */
 .r { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
